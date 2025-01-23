@@ -3,7 +3,7 @@
 ### Introducción al paralelismo - hilos
 
 ### Trabajo individual o en parejas
-
+### Santiago Avellaneda y Miguel Motta
 Entrega: Martes en el transcurso del día.
 Entregar: Fuentes y documento PDF con las respuestas.
 
