@@ -5,8 +5,6 @@
  */
 package edu.eci.arsw.threads;
 
-import java.time.LocalDate;
-
 /**
  *
  * @author hcadavid
@@ -14,20 +12,22 @@ import java.time.LocalDate;
 public class CountThread implements Runnable{
     private  int a;
     private  int b;
-    public CountThread(int a, int b) {
+    private String name;
+    public CountThread(int a, int b, String name) {
         this.a = a;
         this.b = b;
+        this.name = name;
     }
+
     @Override
     public void run() {
+        System.out.println("The CountThread started running...");
         print();
     }
 
     private void print(){
-        System.out.println("Printing numbers between " + a +" - " + b);
-        System.out.println(LocalDate.now());
         for (int i = a; i <= b; i ++ ){
-            System.out.println(i);
+            System.out.println(name + ":\t" + i);
         }
     }
 }
