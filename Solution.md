@@ -41,7 +41,7 @@
 
 #### *Clase de Count Thread*
 ```
-> public class CountThread implements Runnable{
+public class CountThread implements Runnable{
     private  int a;
     private  int b;
     private String name;
@@ -61,7 +61,7 @@
         }
     }
 }
-> ```
+```
 
 #### *Clase de Count Threads Main*
 ```
@@ -103,6 +103,7 @@ public class CountThreadsMain {
 ```
 
 ![](img/RunThread.png)
+
 #### Parte II
 
 #### Evaluación de Desempeño
