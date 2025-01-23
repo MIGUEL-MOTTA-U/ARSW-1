@@ -5,10 +5,29 @@
  */
 package edu.eci.arsw.threads;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author hcadavid
  */
-public class CountThread {
-    
+public class CountThread implements Runnable{
+    private  int a;
+    private  int b;
+    public CountThread(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+    @Override
+    public void run() {
+        print();
+    }
+
+    private void print(){
+        System.out.println("Printing numbers between " + a +" - " + b);
+        System.out.println(LocalDate.now());
+        for (int i = a; i <= b; i ++ ){
+            System.out.println(i);
+        }
+    }
 }
