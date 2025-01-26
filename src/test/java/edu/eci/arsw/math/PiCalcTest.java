@@ -48,5 +48,36 @@ public class PiCalcTest {
             }
         }
     }
+    @Test
+    public void calculateSpecificValue(){
+        // Arrange
+        String expected = "CC50F6D7FF383F442392";
+        // Act [701, 734]
+        String calculated = Main.bytesToHex(PiDigits.getDigits(701, 20));
+        // Assert
+        assertEquals(expected, calculated);
+    }
+
+    @Test
+    public void shouldContainValueInRange(){
+        // Arrange
+        String expected = "CC50F6D7FF383F442392";
+        // Act [600, 800]
+        String calculated = Main.bytesToHex(PiDigits.getDigits(701, 35));
+        // Assert
+        assertTrue(calculated.contains(expected));
+    }
+
+    @Test
+    public void shouldNotFail(){
+        // Arrange
+        String expected = "CC50F6D7FF383F442392";
+        // Act [600, 800]
+        String calculated = Main.bytesToHex(PiDigits.getDigits(700, 35));
+        // Assert
+        assertTrue(calculated.contains(expected));
+    }
+
+
 
 }
