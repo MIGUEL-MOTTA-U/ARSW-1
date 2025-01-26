@@ -105,6 +105,34 @@ public class CountThreadsMain {
 ![](img/RunThread.png)
 
 #### Parte II
+> 
+> Para este ejercicio se quiere calcular, en el menor tiempo posible, y en una sola máquina (aprovechando las características multi-core de la mismas) al menos el primer millón de dígitos de PI (en base 16). Para esto
+> 1. Cree una clase de tipo Thread que represente el ciclo de vida de un hilo que calcule una parte de los dígitos requeridos.
+> 2. Haga que la función `PiDigits.getDigits()` reciba como parámetro adicional un valor N, correspondiente al número de hilos entre los que se va a paralelizar la solución. Haga que dicha función espere hasta que los N hilos terminen de resolver el problema para combinar las respuestas y entonces retornar el resultado. Para esto, revise el método join del API de concurrencia de Java.
+> 3. Ajuste las pruebas de JUnit, considerando los casos de usar 1, 2 o 3 hilos (este último para considerar un número impar de hilos!)
+> 
+
+Para la resolución de este punto, implementamos una clase heredada 
+de
+```
+public class ThreadCalculator implements Runnable{
+    // Atributes ...
+    ThreadCalculator(int start, int count){
+        this.a = start;
+        this.b = count;
+    }
+    @Override
+    public void run(){
+        calculateResult();
+    }
+    private void calculateResult(){
+        result = Main.bytesToHex(PiDigits.getDigits(a, b));
+    }
+    public String getResult() {
+        return result;
+    }
+}
+```
 
 #### Evaluación de Desempeño
 [Aquí va la descripción de la evaluación de desempeño]
